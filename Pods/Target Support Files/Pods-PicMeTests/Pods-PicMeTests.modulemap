@@ -1,0 +1,6 @@
+framework module Pods_PicMeTests {
+  umbrella header "Pods-PicMeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
