@@ -17,39 +17,41 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         // Do any additional setup after loading the view.
     }
     
   
     @IBAction func onSignIn(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: userNameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
+            if user == nil {
+                print("Username/email is required.")
+                self.loginErrorAlert()
+            }
             if user != nil {
                 print("You are logged in.")
+                self.userNameField.text = ""
+                self.passwordField.text = ""
                 self.performSegue(withIdentifier: "logInSegue", sender: nil)
             }
             
         }
     }
     
-    
-    @IBAction func OnSignUp(_ sender: Any) {
-        let newUser = PFUser()
-        newUser.username = userNameField.text
-        newUser.password = passwordField.text
-        newUser.signUpInBackground{(success: Bool
-            , error: Error?) in
-            if success {
-                print("Created a new user!!")
-                self.performSegue(withIdentifier: "logInSegue", sender: nil)
-            } else {
-                print(error?.localizedDescription)
-                if error?._code == 202 {
-                    print("User name is already taken!")
-                }
-            }
-        }
+    func loginErrorAlert(){
+        let alert = UIAlertController(title: "Login Error", message: "Hmm..something went wrong. or Username/Email is missing.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
+        userNameField.text = ""
+        passwordField.text = ""
     }
+    
+  
+    @IBAction func onTapDismissKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 

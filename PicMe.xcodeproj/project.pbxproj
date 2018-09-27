@@ -15,6 +15,9 @@
 		08478F69215C0C140062FDD8 /* PicMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F68215C0C140062FDD8 /* PicMeTests.swift */; };
 		08478F74215C0C140062FDD8 /* PicMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F73215C0C140062FDD8 /* PicMeUITests.swift */; };
 		08A97D0C215C180D004DDDBA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0B215C180D004DDDBA /* LogInViewController.swift */; };
+		08A97D0E215C3A67004DDDBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0D215C3A67004DDDBA /* HomeViewController.swift */; };
+		08A97D10215C3AD3004DDDBA /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */; };
+		08A97D12215C432B004DDDBA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D11215C432B004DDDBA /* SignUpViewController.swift */; };
 		7694BA757D786C3CBD412C85 /* Pods_PicMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20EC6225385473386CEAF62 /* Pods_PicMe.framework */; };
 		7A28E6295409ED78ECA9FE3A /* Pods_PicMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E901E495F54FA31DBDA3AB56 /* Pods_PicMeTests.framework */; };
 		E2123C32023FB080BD0BCD85 /* Pods_PicMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0288B8420952D311498359B5 /* Pods_PicMeUITests.framework */; };
@@ -54,6 +57,9 @@
 		08478F73215C0C140062FDD8 /* PicMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicMeUITests.swift; sourceTree = "<group>"; };
 		08478F75215C0C140062FDD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08A97D0B215C180D004DDDBA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		08A97D0D215C3A67004DDDBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		08A97D11215C432B004DDDBA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0D3682458FAE7790CEDCCE8A /* Pods-PicMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMe.debug.xcconfig"; path = "Target Support Files/Pods-PicMe/Pods-PicMe.debug.xcconfig"; sourceTree = "<group>"; };
 		4FF921B164C77806E3280653 /* Pods-PicMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMeTests.release.xcconfig"; path = "Target Support Files/Pods-PicMeTests/Pods-PicMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		79719228F6228D72DE15D850 /* Pods-PicMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-PicMeUITests/Pods-PicMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 				08478F53215C0C130062FDD8 /* AppDelegate.swift */,
 				08478F55215C0C130062FDD8 /* ViewController.swift */,
 				08A97D0B215C180D004DDDBA /* LogInViewController.swift */,
+				08A97D11215C432B004DDDBA /* SignUpViewController.swift */,
+				08A97D0D215C3A67004DDDBA /* HomeViewController.swift */,
+				08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */,
 				08478F57215C0C130062FDD8 /* Main.storyboard */,
 				08478F5A215C0C140062FDD8 /* Assets.xcassets */,
 				08478F5C215C0C140062FDD8 /* LaunchScreen.storyboard */,
@@ -396,9 +405,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A97D12215C432B004DDDBA /* SignUpViewController.swift in Sources */,
 				08478F56215C0C130062FDD8 /* ViewController.swift in Sources */,
 				08478F54215C0C130062FDD8 /* AppDelegate.swift in Sources */,
 				08A97D0C215C180D004DDDBA /* LogInViewController.swift in Sources */,
+				08A97D0E215C3A67004DDDBA /* HomeViewController.swift in Sources */,
+				08A97D10215C3AD3004DDDBA /* NewPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

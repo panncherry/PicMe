@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -472,7 +472,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00671139E0D6BC6A5BE2C866E903EC4F /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Bolts.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00671139E0D6BC6A5BE2C866E903EC4F /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C2C644E09FDA6B8EB586808A1A7D66 /* Pods-PicMeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PicMeTests-dummy.m"; sourceTree = "<group>"; };
 		0109BC6569A4749C2FDB4F0DF018A083 /* PFPushChannelsController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPushChannelsController.h; path = Parse/Parse/Internal/Push/ChannelsController/PFPushChannelsController.h; sourceTree = "<group>"; };
 		0187869F9630BD63CB2BCE34642D412A /* PFObject+Deprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PFObject+Deprecated.h"; path = "Parse/Parse/PFObject+Deprecated.h"; sourceTree = "<group>"; };
@@ -585,7 +585,7 @@
 		41AF1816DAE8E57813DE11BE8F1889B7 /* PFSQLiteDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFSQLiteDatabase.m; path = Parse/Parse/Internal/LocalDataStore/SQLite/PFSQLiteDatabase.m; sourceTree = "<group>"; };
 		42274B86893C1EDC30951BA32173D928 /* PFSessionUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFSessionUtilities.h; path = Parse/Parse/Internal/Session/Utilities/PFSessionUtilities.h; sourceTree = "<group>"; };
 		42DD5023145AD995E26EF2E21284305D /* PFPurchase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPurchase.h; path = Parse/Parse/PFPurchase.h; sourceTree = "<group>"; };
-		45E5824B2076C3484B6B14B1BD1EEF82 /* Pods_PicMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PicMeUITests.framework; path = "Pods-PicMeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45E5824B2076C3484B6B14B1BD1EEF82 /* Pods_PicMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B048A3E05A5F450296DFAE74917B7C /* PFQueryPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQueryPrivate.h; path = Parse/Parse/Internal/Query/PFQueryPrivate.h; sourceTree = "<group>"; };
 		46B8FD73C6833730F58A559A5905F21F /* PFCommandCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFCommandCache.h; path = Parse/Parse/Internal/PFCommandCache.h; sourceTree = "<group>"; };
 		485973C72738533D580DBEF1E5851CA7 /* PFWeakValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFWeakValue.h; path = Parse/Parse/Internal/PFWeakValue.h; sourceTree = "<group>"; };
@@ -631,7 +631,7 @@
 		63576F0F6CDBF049533A40CB9D62DC3D /* PFRESTPushCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTPushCommand.h; path = Parse/Parse/Internal/Commands/PFRESTPushCommand.h; sourceTree = "<group>"; };
 		635E823963989C87884E72F18907B824 /* Pods-PicMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PicMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		6368EDF348863EEAC057B52D2EC795F8 /* PFPinningEventuallyQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPinningEventuallyQueue.h; path = Parse/Parse/Internal/PFPinningEventuallyQueue.h; sourceTree = "<group>"; };
-		64508DA99D0682F17BFC030D5F4CB4E1 /* Pods_PicMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PicMeTests.framework; path = "Pods-PicMeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64508DA99D0682F17BFC030D5F4CB4E1 /* Pods_PicMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D1B834743049E0D6D70E089FC20C09 /* PFRESTAnalyticsCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTAnalyticsCommand.h; path = Parse/Parse/Internal/Commands/PFRESTAnalyticsCommand.h; sourceTree = "<group>"; };
 		655BE6D1527CC0A53297573A31F5418F /* PFFileState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFileState.h; path = Parse/Parse/Internal/File/State/PFFileState.h; sourceTree = "<group>"; };
 		66BA83F875F12F0E89ECE300B84CDE84 /* PFMutableUserState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMutableUserState.h; path = Parse/Parse/Internal/User/State/PFMutableUserState.h; sourceTree = "<group>"; };
@@ -644,7 +644,7 @@
 		69DFE8EDF40DF443EEE4501FA7291750 /* PFFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFile.h; path = Parse/Parse/PFFile.h; sourceTree = "<group>"; };
 		6ADB89D7B2C0E63A9573B7F171DE52C2 /* PFPropertyInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPropertyInfo.m; path = Parse/Parse/Internal/PropertyInfo/PFPropertyInfo.m; sourceTree = "<group>"; };
 		6BA1C97727BCD95628E112795112DDC8 /* PFACL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFACL.h; path = Parse/Parse/PFACL.h; sourceTree = "<group>"; };
-		6C8242E224BBB629938EEAA21EB8E55D /* Parse.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Parse.bundle; path = "Parse-Parse.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C8242E224BBB629938EEAA21EB8E55D /* Parse.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Parse.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D010132F8FBFBACF4C4D6102145BF61 /* PFFileUploadResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFFileUploadResult.h; path = Parse/Parse/PFFileUploadResult.h; sourceTree = "<group>"; };
 		6D1B2998315F5695CA32AD7D4F656552 /* PFGeoPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFGeoPoint.m; path = Parse/Parse/PFGeoPoint.m; sourceTree = "<group>"; };
 		6D24335D5BCDD3A2E30344687392183F /* PFDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFDecoder.m; path = Parse/Parse/PFDecoder.m; sourceTree = "<group>"; };
@@ -727,7 +727,7 @@
 		9215B411E9549AA120FB62FAA255F883 /* PFPaymentTransactionObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPaymentTransactionObserver.h; path = Parse/Parse/Internal/Purchase/PaymentTransactionObserver/PFPaymentTransactionObserver.h; sourceTree = "<group>"; };
 		92AF62756B20797D48702163E2D3002C /* PFAnalytics_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnalytics_Private.h; path = Parse/Parse/Internal/Analytics/PFAnalytics_Private.h; sourceTree = "<group>"; };
 		93658FAA154E3BD62C66ACE6F7CD71A4 /* PFMultiProcessFileLock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMultiProcessFileLock.h; path = Parse/Parse/Internal/MultiProcessLock/PFMultiProcessFileLock.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93FF83AA75E9BD5D502E7788E0BEC586 /* PFRole.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFRole.m; path = Parse/Parse/PFRole.m; sourceTree = "<group>"; };
 		945C3E51C064F7B3E91DE41AB6D9D3D0 /* PFUserController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFUserController.h; path = Parse/Parse/Internal/User/Controller/PFUserController.h; sourceTree = "<group>"; };
 		94897DB421AEBA81E60F845E586DF2CB /* PFRESTSessionCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTSessionCommand.h; path = Parse/Parse/Internal/Commands/PFRESTSessionCommand.h; sourceTree = "<group>"; };
@@ -854,7 +854,7 @@
 		DE91DA79B624411560B5B2457C882E07 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF0CBF5244439A86D9E61451DBF3A7BA /* PFMutableFileState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutableFileState.m; path = Parse/Parse/Internal/File/State/PFMutableFileState.m; sourceTree = "<group>"; };
 		DFB4DEC07167F1CD417E027715411A9D /* PFAnalyticsUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFAnalyticsUtilities.m; path = Parse/Parse/Internal/Analytics/Utilities/PFAnalyticsUtilities.m; sourceTree = "<group>"; };
-		DFDE4DE76DB495118D3670AD3016C3B0 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
+		DFDE4DE76DB495118D3670AD3016C3B0 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = Parse/Parse/Resources/en.lproj; sourceTree = "<group>"; };
 		DFF0470A400CE9B842B6118CBC866929 /* PFKeyValueCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFKeyValueCache.h; path = Parse/Parse/Internal/KeyValueCache/PFKeyValueCache.h; sourceTree = "<group>"; };
 		E013F5A9585FD2EE096EE2F578BCB4F7 /* PFBase64Encoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFBase64Encoder.m; path = Parse/Parse/Internal/PFBase64Encoder.m; sourceTree = "<group>"; };
 		E04E2F892A15E7C07ADE88682FA686CD /* Pods-PicMeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PicMeUITests.modulemap"; sourceTree = "<group>"; };
@@ -862,7 +862,7 @@
 		E14473241FB575026D35D984FEBCC64E /* PFThreadsafety.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFThreadsafety.m; path = Parse/Parse/Internal/ThreadSafety/PFThreadsafety.m; sourceTree = "<group>"; };
 		E2822D9C7F36083F83E3F1CBC7170031 /* PFObjectConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFObjectConstants.m; path = Parse/Parse/Internal/Object/Constants/PFObjectConstants.m; sourceTree = "<group>"; };
 		E3320E764B0705F864968FB18D78B427 /* PFPersistenceController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFPersistenceController.m; path = Parse/Parse/Internal/Persistence/PFPersistenceController.m; sourceTree = "<group>"; };
-		E3576E967867D8AFCD9D52214595F8EE /* Pods_PicMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PicMe.framework; path = "Pods-PicMe.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3576E967867D8AFCD9D52214595F8EE /* Pods_PicMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3B855D3CA9DAB8E81E0AC4C1980DF22 /* PFLocationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFLocationManager.m; path = Parse/Parse/Internal/PFLocationManager.m; sourceTree = "<group>"; };
 		E49BCF0C9A4B0994E677CB1D4036F5D6 /* PFQueryUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFQueryUtilities.h; path = Parse/Parse/Internal/Query/Utilities/PFQueryUtilities.h; sourceTree = "<group>"; };
 		E4A9A086F668C886622C9EB657D3D450 /* PFAnonymousAuthenticationProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnonymousAuthenticationProvider.h; path = Parse/Parse/Internal/User/AuthenticationProviders/Providers/Anonymous/PFAnonymousAuthenticationProvider.h; sourceTree = "<group>"; };
@@ -899,7 +899,7 @@
 		F39412C30BCE08198030EA53E9A37092 /* PFConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFConfig.h; path = Parse/Parse/PFConfig.h; sourceTree = "<group>"; };
 		F3A7B893CC047DFEB04DDC39C58339EF /* PFMutableQueryState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFMutableQueryState.h; path = Parse/Parse/Internal/Query/State/PFMutableQueryState.h; sourceTree = "<group>"; };
 		F3A9C0E59C07F823889EF43423B7FBFF /* PFAnalyticsUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFAnalyticsUtilities.h; path = Parse/Parse/Internal/Analytics/Utilities/PFAnalyticsUtilities.h; sourceTree = "<group>"; };
-		F487E08F401B6384BB1C8DE1047DE2DE /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Parse.framework; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F487E08F401B6384BB1C8DE1047DE2DE /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51D71914C34A3E6C976E25A406D2859 /* Pods-PicMe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PicMe-acknowledgements.plist"; sourceTree = "<group>"; };
 		F77A24778B80F4F17397B8FB10CF1BB6 /* PFPaymentTransactionObserver_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFPaymentTransactionObserver_Private.h; path = Parse/Parse/Internal/Purchase/PaymentTransactionObserver/PFPaymentTransactionObserver_Private.h; sourceTree = "<group>"; };
 		F7897DD877A91E8C99EF8907E365A227 /* PFInstallationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFInstallationController.m; path = Parse/Parse/Internal/Installation/Controller/PFInstallationController.m; sourceTree = "<group>"; };
@@ -1059,7 +1059,6 @@
 				332DA4739C543DBB4FCD9C47E9197EA6 /* Support Files */,
 				60FE7752641D36DEBA39FC2412FADC4C /* Tasks */,
 			);
-			name = Bolts;
 			path = Bolts;
 			sourceTree = "<group>";
 		};
@@ -1511,7 +1510,6 @@
 				668699DF6F862BE0C73B2DFA4543146E /* Core */,
 				F2DB4C56274A6795C8626A403A8DF784 /* Support Files */,
 			);
-			name = Parse;
 			path = Parse;
 			sourceTree = "<group>";
 		};
@@ -1956,7 +1954,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2284,7 +2282,6 @@
 			baseConfigurationReference = 635E823963989C87884E72F18907B824 /* Pods-PicMeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2298,11 +2295,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PicMeTests/Pods-PicMeTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PicMeTests/Pods-PicMeTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -2339,7 +2332,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF1F65A4DAF1471FE0CFA41124D86941 /* Bolts.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2353,11 +2345,7 @@
 				INFOPLIST_FILE = "Target Support Files/Bolts/Bolts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Bolts/Bolts.modulemap";
 				PRODUCT_MODULE_NAME = Bolts;
 				PRODUCT_NAME = Bolts;
@@ -2436,7 +2424,6 @@
 			baseConfigurationReference = 7B3F381FF372420B17D1EEA647BE197D /* Pods-PicMeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2450,11 +2437,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PicMeUITests/Pods-PicMeUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PicMeUITests/Pods-PicMeUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -2475,7 +2458,6 @@
 			baseConfigurationReference = 5760B4CE378E897916923C668958D989 /* Pods-PicMeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2489,11 +2471,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PicMeUITests/Pods-PicMeUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PicMeUITests/Pods-PicMeUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -2515,7 +2493,6 @@
 			baseConfigurationReference = D886532C401AE60876F85B40BE6F6D80 /* Pods-PicMeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2529,11 +2506,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PicMeTests/Pods-PicMeTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PicMeTests/Pods-PicMeTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -2554,7 +2527,6 @@
 			baseConfigurationReference = ACE9BAE5EE290EF0003B88CE5DCF1A9B /* Pods-PicMe.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2568,11 +2540,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PicMe/Pods-PicMe-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PicMe/Pods-PicMe.modulemap";
 				OTHER_LDFLAGS = "";
@@ -2593,7 +2561,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF1F65A4DAF1471FE0CFA41124D86941 /* Bolts.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2607,11 +2574,7 @@
 				INFOPLIST_FILE = "Target Support Files/Bolts/Bolts-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Bolts/Bolts.modulemap";
 				PRODUCT_MODULE_NAME = Bolts;
 				PRODUCT_NAME = Bolts;
@@ -2693,7 +2656,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73A8B9311B6C5431E9A061E2AC3ACE76 /* Parse.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2707,11 +2669,7 @@
 				INFOPLIST_FILE = "Target Support Files/Parse/Parse-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Parse/Parse.modulemap";
 				PRODUCT_MODULE_NAME = Parse;
 				PRODUCT_NAME = Parse;
@@ -2746,7 +2704,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 73A8B9311B6C5431E9A061E2AC3ACE76 /* Parse.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2760,11 +2717,7 @@
 				INFOPLIST_FILE = "Target Support Files/Parse/Parse-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Parse/Parse.modulemap";
 				PRODUCT_MODULE_NAME = Parse;
 				PRODUCT_NAME = Parse;
@@ -2783,7 +2736,6 @@
 			baseConfigurationReference = 109FD153D20B2C783D189FCA8157D005 /* Pods-PicMe.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2797,11 +2749,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-PicMe/Pods-PicMe-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PicMe/Pods-PicMe.modulemap";
 				OTHER_LDFLAGS = "";
