@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		08478F54215C0C130062FDD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F53215C0C130062FDD8 /* AppDelegate.swift */; };
-		08478F56215C0C130062FDD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F55215C0C130062FDD8 /* ViewController.swift */; };
 		08478F59215C0C130062FDD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08478F57215C0C130062FDD8 /* Main.storyboard */; };
 		08478F5B215C0C140062FDD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08478F5A215C0C140062FDD8 /* Assets.xcassets */; };
 		08478F5E215C0C140062FDD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08478F5C215C0C140062FDD8 /* LaunchScreen.storyboard */; };
 		08478F69215C0C140062FDD8 /* PicMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F68215C0C140062FDD8 /* PicMeTests.swift */; };
 		08478F74215C0C140062FDD8 /* PicMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F73215C0C140062FDD8 /* PicMeUITests.swift */; };
+		0876749F215FDB63006706D6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0876749E215FDB63006706D6 /* ProfileViewController.swift */; };
 		08A97D0C215C180D004DDDBA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0B215C180D004DDDBA /* LogInViewController.swift */; };
 		08A97D0E215C3A67004DDDBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0D215C3A67004DDDBA /* HomeViewController.swift */; };
 		08A97D10215C3AD3004DDDBA /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */; };
@@ -45,7 +45,6 @@
 		0418F434AC8C5714E6600AC1 /* Pods-PicMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMe.release.xcconfig"; path = "Target Support Files/Pods-PicMe/Pods-PicMe.release.xcconfig"; sourceTree = "<group>"; };
 		08478F50215C0C130062FDD8 /* PicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08478F53215C0C130062FDD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		08478F55215C0C130062FDD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		08478F58215C0C130062FDD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08478F5A215C0C140062FDD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08478F5D215C0C140062FDD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		08478F6F215C0C140062FDD8 /* PicMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08478F73215C0C140062FDD8 /* PicMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicMeUITests.swift; sourceTree = "<group>"; };
 		08478F75215C0C140062FDD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0876749E215FDB63006706D6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		08A97D0B215C180D004DDDBA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		08A97D0D215C3A67004DDDBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
@@ -122,12 +122,8 @@
 		08478F52215C0C130062FDD8 /* PicMe */ = {
 			isa = PBXGroup;
 			children = (
+				0876749D215FDB14006706D6 /* View Controllers */,
 				08478F53215C0C130062FDD8 /* AppDelegate.swift */,
-				08478F55215C0C130062FDD8 /* ViewController.swift */,
-				08A97D0B215C180D004DDDBA /* LogInViewController.swift */,
-				08A97D11215C432B004DDDBA /* SignUpViewController.swift */,
-				08A97D0D215C3A67004DDDBA /* HomeViewController.swift */,
-				08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */,
 				08478F57215C0C130062FDD8 /* Main.storyboard */,
 				08478F5A215C0C140062FDD8 /* Assets.xcassets */,
 				08478F5C215C0C140062FDD8 /* LaunchScreen.storyboard */,
@@ -152,6 +148,18 @@
 				08478F75215C0C140062FDD8 /* Info.plist */,
 			);
 			path = PicMeUITests;
+			sourceTree = "<group>";
+		};
+		0876749D215FDB14006706D6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				08A97D0B215C180D004DDDBA /* LogInViewController.swift */,
+				08A97D0D215C3A67004DDDBA /* HomeViewController.swift */,
+				08A97D11215C432B004DDDBA /* SignUpViewController.swift */,
+				08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */,
+				0876749E215FDB63006706D6 /* ProfileViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		BD967AD492B77C98FDB3060E /* Pods */ = {
@@ -405,8 +413,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0876749F215FDB63006706D6 /* ProfileViewController.swift in Sources */,
 				08A97D12215C432B004DDDBA /* SignUpViewController.swift in Sources */,
-				08478F56215C0C130062FDD8 /* ViewController.swift in Sources */,
 				08478F54215C0C130062FDD8 /* AppDelegate.swift in Sources */,
 				08A97D0C215C180D004DDDBA /* LogInViewController.swift in Sources */,
 				08A97D0E215C3A67004DDDBA /* HomeViewController.swift in Sources */,
