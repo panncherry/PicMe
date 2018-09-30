@@ -7,15 +7,42 @@
 //
 
 import UIKit
-
+import Photos
 
 class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var imagePickedImageView: UIImageView!
+    @IBOutlet weak var imagePickedView: UIImageView!
+    
+    @IBOutlet weak var postTextField: UITextField!
+    
+    let vc = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = UIImagePickerController()
+        vc.delegate = self
+        // Do any additional setup after loading the view.
+    }
+    
+    @objc func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
+        let isEditied = true
+        // Get the image captured by the UIImagePickerController
+        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+        
+        // Do something with the images (based on your use case)
+        if isEditied{
+            imagePickedView.image = editedImage
+        } else {
+            imagePickedView.image = originalImage
+        }
+        print("image set")
+        // Dismiss UIImagePickerController to go back to your original view controller
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func openCamera(_ sender: Any) {
+        //let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.allowsEditing = true
         vc.delegate = self
@@ -27,39 +54,37 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("Camera 🚫 available so we will use photo library instead")
             vc.sourceType = .photoLibrary
         }
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func openCameraButton(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera;
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
+    
+    @IBAction func openPhotoLibrary(_ sender: Any) {
+        //let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerController.SourceType.photoLibrary
+        print("Open photo library.")
+        self.present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func openPhotoLibraryButton(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
+    
+    @IBAction func onTappedDismissKeyboard(_ sender: Any) {
+        view.endEditing(true)
     }
     
- /*   @IBAction func savePhotoButton(_ sender: Any) {
-        var imageData = UIImageJPEGRepresentation(imagePickedImageView.image!, 0.6)
-        var compressedJPGImage = UIImage(data: imageData)
-        UIImageWriteToSavedPhotosAlbum(compressedJPGImage, nil, nil, nil)
+    
+    @IBAction func postImage(_ sender: Any) {
+    }
+    
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: newSize.width, height:newSize.height)))
+        resizeImageView.contentMode = UIView.ContentMode.scaleAspectFill
+        resizeImageView.image = image
         
-        var alert = UIAlertControllerStyle(title: "Wow",
-                                message: "Your image has been saved to Photo Library!",
-                                delegate: nil,
-                                cancelButtonTitle: "Ok")
-        alert.show()
-    }*/
-    
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+
 }
