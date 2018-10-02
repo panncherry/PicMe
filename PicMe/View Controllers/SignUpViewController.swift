@@ -8,28 +8,20 @@
 
 import UIKit
 import Parse
+import Photos
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var window: UIWindow?
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var avatarImg: UIImageView!
-    
     @IBOutlet weak var emailField: UITextField!
-    
     @IBOutlet weak var userNameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var repeatPasswordField: UITextField!
-    
     @IBOutlet weak var fullnameField: UITextField!
-    
     @IBOutlet weak var bioTextField: UITextField!
-    
     @IBOutlet weak var websiteTextField: UITextField!
-    
     @IBOutlet weak var createAccountBtn: UIButton!
     
     
@@ -130,17 +122,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             , error: Error?) in
             if success {
                 print("Created a new user!!")
-                //self.performSegue(withIdentifier: "logInSegue", sender: nil)
                 //remember logged user in app memory
                 UserDefaults.standard.set(newUser.username, forKey: "username")
                 UserDefaults.standard.synchronize()
-                
-                //call login function from AppDelegate
-               // let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
-               // appDelegate.logIn()
-                
-               // self.newUserCreatedAlert(title: "Congrats!", message: "Created a new user.")
-
                 self.view.window!.rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
                 
             } else {
@@ -244,16 +228,36 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @objc func loadImage(recognizer:UITapGestureRecognizer) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("Camera is available 📸")
+            imagePicker.sourceType = .camera
+        } else {
+            print("Camera 🚫 available so we will use photo library instead")
+            imagePicker.sourceType = .photoLibrary
+        }
         present(imagePicker, animated: true, completion: nil)
-
     }
     
     //connect selected image to our imageView
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        avatarImg.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-        self.dismiss(animated: true, completion: nil)
+        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        let editedImage = resize(image: originalImage, newSize: CGSize(width: 128, height: 128))
+        self.avatarImg.image = editedImage
+        dismiss(animated: true, completion: nil)
     }
+    
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        resizeImageView.contentMode = UIView.ContentMode.scaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+    
     
 }

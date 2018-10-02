@@ -8,98 +8,48 @@
 
 import UIKit
 import Photos
-import MBProgressHUD
 import Parse
 
 class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var imagePickedView: UIImageView!
+    @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postTextField: UITextField!
     @IBOutlet weak var publishBtn: UIButton!
-    @IBOutlet weak var removeBtn: UIButton!
     let vc = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePickedView.image = UIImage(named: "pbg.jpg")
-        vc.delegate = self
+        postImage.image = UIImage(named: "pbg.jpg")
     }
-
     
     @IBAction func postButton_Clicked(_ sender: Any) {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        Post.postUserImage(image: imagePickedView.image, withCaption: postTextField.text) { (success, error) in
-            print("File sent")
-            MBProgressHUD.hide(for: self.view, animated: true)
+        let postData = PFObject(className: "Post")
+        
+        if let currentUser = PFUser.current() {
+            postData["author"] = currentUser
         }
-        //self.dismiss(animated: true, completion: nil)
-    }
-    
-    // zooming in / out function
-    func zoomImg() {
-        // define frame of zoomed image
-        let zoomed = CGRect(x: 0, y: self.view.center.y - self.view.center.x - self.tabBarController!.tabBar.frame.size.height * 1.5, width: self.view.frame.size.width, height: self.view.frame.size.width)
+        postData["caption"] = postTextField.text ?? ""
+        postData["postImage"] = postImage.image ?? ""
         
-        // frame of unzoomed (small) image
-        let unzoomed = CGRect(x: 15, y: 15, width: self.view.frame.size.width / 4.5, height: self.view.frame.size.width / 4.5)
-        
-        // if picture is unzoomed, zoom it
-        if imagePickedView.frame == unzoomed {
-            
-            // with animation
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                // resize image frame
-                self.imagePickedView.frame = zoomed
-                
-                // hide objects from background
-                self.view.backgroundColor = .black
-                self.postTextField.alpha = 0
-                self.publishBtn.alpha = 0
-                self.removeBtn.alpha = 0
-            })
-            
-            // to unzoom
-        } else {
-            
-            // with animation
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                // resize image frame
-                self.imagePickedView.frame = unzoomed
-                // unhide objects from background
-                self.view.backgroundColor = .white
-                self.postTextField.alpha = 1
-                self.publishBtn.alpha = 1
-                self.removeBtn.alpha = 1
-            })
+        postData.saveInBackground { (success, error) in
+            if success {
+                print("Post data sent successfully.")
+                self.postTextField.text = ""
+            } else if let error = error {
+                print("Problem saving post data: \(error.localizedDescription)")
+            }
         }
     }
     
-    // alignment
-    func alignment() {
-        let width = self.view.frame.size.width
-        let height = self.view.frame.size.height
-        imagePickedView.frame = CGRect(x: 15, y: 15, width: width / 4.5, height: width / 4.5)
-        postTextField.frame = CGRect(x: imagePickedView.frame.size.width + 25, y: imagePickedView.frame.origin.y, width: width / 1.488, height: imagePickedView.frame.size.height)
-        publishBtn.frame = CGRect(x: 0, y: height / 1.09, width: width, height: width / 8)
-        removeBtn.frame = CGRect(x: imagePickedView.frame.origin.x, y: imagePickedView.frame.origin.y + imagePickedView.frame.size.height, width: imagePickedView.frame.size.width, height: 20)
-    }
-    
-    
-    
-    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey : Any]) {
-        // Get the image captured by the UIImagePickerController
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        let editedImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
-        // Do something with the images (based on your use case)
-        imagePickedView.image = editedImage
-     
-        print("image set")
-        // Dismiss UIImagePickerController to go back to your original view controller
+        let editedImage = resize(image: originalImage, newSize: CGSize(width: 640, height: 640))
+        self.postImage.image = editedImage
         dismiss(animated: true, completion: nil)
     }
     
+    
     @IBAction func openCamera(_ sender: Any) {
-        //let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.allowsEditing = true
         vc.delegate = self
@@ -115,7 +65,6 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     @IBAction func openPhotoLibrary(_ sender: Any) {
-        //let vc = UIImagePickerController()
         vc.delegate = self
         vc.allowsEditing = true
         vc.sourceType = UIImagePickerController.SourceType.photoLibrary

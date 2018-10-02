@@ -44,7 +44,7 @@ class resetPasswordViewController: UIViewController {
                 alert.addAction(okay)
                 self.present(alert, animated: true, completion: nil)
             } else {
-                print(error?.localizedDescription )
+                print(error?.localizedDescription)
             }
         }
 }

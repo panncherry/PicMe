@@ -11,9 +11,10 @@ import Parse
 
 class Post: PFObject, PFSubclassing {
 
-    @NSManaged var imagePickedView : PFFile
-    @NSManaged var user: PFUser
-    @NSManaged var title: String
+    @NSManaged var avatarImg : PFFile
+    @NSManaged var postImage : PFFile
+    @NSManaged var author: PFUser
+    @NSManaged var caption: String
     @NSManaged var likesCount: Int
     @NSManaged var commentsCount: Int
     
@@ -22,19 +23,22 @@ class Post: PFObject, PFSubclassing {
         return "Post"
     }
     
-    class func postUserImage(image: UIImage?, withCaption title: String?, withCompletion completion: PFBooleanResultBlock?) {
+    class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
         // use subclass approach
         let post = Post()
-        post.imagePickedView = getPFFileFromImage(image: image)!
-        post.user = PFUser.current()!
-        post.title = title!
+        post.author = PFUser.current()!
+        post.caption = caption!
+        post.likesCount = 0
+        post.commentsCount = 0
+        post.avatarImg = getPFFileFromImage(image: image)!
+        
         post.saveInBackground(block: completion)
     }
-    
+        
     class func getPFFileFromImage(image: UIImage?) -> PFFile? {
         if let image = image {
-            if let imageData = image.jpegData(compressionQuality: 0.5) {
-                return PFFile(name: "image.jpeg", data: imageData)
+            if let imageData = image.pngData() {
+                return PFFile(name: "image.png", data: imageData)
             }
         }
         return nil

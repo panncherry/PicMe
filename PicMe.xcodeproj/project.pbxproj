@@ -35,6 +35,7 @@
 		08A97D0C215C180D004DDDBA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0B215C180D004DDDBA /* LogInViewController.swift */; };
 		08A97D10215C3AD3004DDDBA /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */; };
 		08A97D12215C432B004DDDBA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D11215C432B004DDDBA /* SignUpViewController.swift */; };
+		08C1062A2163D65C00DCC631 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C106292163D65C00DCC631 /* InfiniteScrollActivityView.swift */; };
 		08CD17182161CEC300D40A85 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD17172161CEC300D40A85 /* PictureCell.swift */; };
 		7694BA757D786C3CBD412C85 /* Pods_PicMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20EC6225385473386CEAF62 /* Pods_PicMe.framework */; };
 		7A28E6295409ED78ECA9FE3A /* Pods_PicMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E901E495F54FA31DBDA3AB56 /* Pods_PicMeTests.framework */; };
@@ -96,6 +97,7 @@
 		08A97D0B215C180D004DDDBA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		08A97D11215C432B004DDDBA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		08C106292163D65C00DCC631 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		08CD17172161CEC300D40A85 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		0D3682458FAE7790CEDCCE8A /* Pods-PicMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMe.debug.xcconfig"; path = "Target Support Files/Pods-PicMe/Pods-PicMe.debug.xcconfig"; sourceTree = "<group>"; };
 		4FF921B164C77806E3280653 /* Pods-PicMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMeTests.release.xcconfig"; path = "Target Support Files/Pods-PicMeTests/Pods-PicMeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,10 +222,11 @@
 		08A0055D21608B830071AB29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				08682B6921626DCA00F0D9AD /* Post.swift */,
 				08A0055E21608BA70071AB29 /* PostCell.swift */,
 				081A95902161CB5D00ABE656 /* ProfileHeaderView.swift */,
 				08CD17172161CEC300D40A85 /* PictureCell.swift */,
-				08682B6921626DCA00F0D9AD /* Post.swift */,
+				08C106292163D65C00DCC631 /* InfiniteScrollActivityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C1062A2163D65C00DCC631 /* InfiniteScrollActivityView.swift in Sources */,
 				08A0055F21608BA70071AB29 /* PostCell.swift in Sources */,
 				08682B6A21626DCA00F0D9AD /* Post.swift in Sources */,
 				08A97D12215C432B004DDDBA /* SignUpViewController.swift in Sources */,

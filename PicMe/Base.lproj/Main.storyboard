@@ -175,14 +175,6 @@
                                                     <rect key="frame" x="15" y="6" width="51" height="41"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMC-8i-hht">
-                                                    <rect key="frame" x="74" y="17" width="275" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="username_Button"/>
-                                                    <connections>
-                                                        <action selector="username_Button_Clicked:" destination="uYI-Ox-MyG" eventType="touchUpInside" id="gjP-4K-xf0"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5q-UJ-ySe">
                                                     <rect key="frame" x="14" y="384" width="25" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -203,10 +195,17 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="more"/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Batman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YZ-3i-8UT">
+                                                    <rect key="frame" x="76" y="26" width="324" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="avatarImage" destination="ihB-Jg-WNP" id="axM-dQ-gmZ"/>
+                                            <outlet property="avatarImg" destination="ihB-Jg-WNP" id="7Za-ch-Xtx"/>
                                             <outlet property="captionLabel" destination="4zu-v4-BW7" id="YBC-fn-abp"/>
                                             <outlet property="commentButton" destination="01c-dy-L9e" id="4d4-Gd-qbF"/>
                                             <outlet property="dateLabel" destination="GU3-BW-f3g" id="pC0-bo-j7r"/>
@@ -215,7 +214,7 @@
                                             <outlet property="moreButton" destination="4oU-Sk-Idy" id="0aO-1v-Yjw"/>
                                             <outlet property="postImage" destination="6zM-EJ-xtY" id="KTW-Mn-Jr9"/>
                                             <outlet property="shareButton" destination="1Ab-kp-L2d" id="ge7-wa-77l"/>
-                                            <outlet property="username_Button" destination="FMC-8i-hht" id="Rpz-pY-RdD"/>
+                                            <outlet property="usernameLabel" destination="3YZ-3i-8UT" id="tyu-xd-muC"/>
                                             <outlet property="uuidLabel" destination="Prx-QP-oOD" id="7uy-nj-26E"/>
                                         </connections>
                                     </tableViewCell>
@@ -459,10 +458,9 @@
                     <navigationItem key="navigationItem" id="lmZ-5B-zzF"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imagePickedView" destination="z0o-NB-cED" id="uRl-8g-LBe"/>
+                        <outlet property="postImage" destination="z0o-NB-cED" id="cWq-Zt-eK0"/>
                         <outlet property="postTextField" destination="pzi-g3-iC5" id="dNi-QO-ocO"/>
                         <outlet property="publishBtn" destination="L5f-da-MHm" id="3sD-8f-wj2"/>
-                        <outlet property="removeBtn" destination="Aw8-Od-fhk" id="zro-y3-iFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBk-l8-8bO" userLabel="First Responder" sceneMemberID="firstResponder"/>
