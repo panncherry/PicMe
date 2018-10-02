@@ -7,23 +7,35 @@
 //
 
 import UIKit
-import Parse
+import ParseUI
 
 class PostCell: UITableViewCell {
+    //user profile image and name
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var username_Button: UIButton!
     
-    @IBOutlet weak var postImage: UIImageView!
+    //buttons
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var moreButton: UIButton!
     
-    @IBOutlet weak var postCaption: UILabel!
+    //main post image
+    @IBOutlet weak var postImage: PFImageView!
     
+    //labels
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var uuidLabel: UILabel!
+    // default func
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

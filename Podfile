@@ -6,7 +6,9 @@
   use_frameworks!
 
 
-        pod 'Parse'
+  pod 'Parse'
+  pod 'ParseUI'
+  pod 'MBProgressHUD'
 
   # Pods for PicMe
 

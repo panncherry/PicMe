@@ -7,18 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		081A958D2161BCB700ABE656 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 081A958C2161BCB700ABE656 /* Pacifico.ttf */; };
+		081A958F2161CB0B00ABE656 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A958E2161CB0B00ABE656 /* ProfileViewController.swift */; };
+		081A95912161CB5D00ABE656 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081A95902161CB5D00ABE656 /* ProfileHeaderView.swift */; };
 		08478F54215C0C130062FDD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F53215C0C130062FDD8 /* AppDelegate.swift */; };
 		08478F59215C0C130062FDD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08478F57215C0C130062FDD8 /* Main.storyboard */; };
 		08478F5B215C0C140062FDD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08478F5A215C0C140062FDD8 /* Assets.xcassets */; };
 		08478F5E215C0C140062FDD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08478F5C215C0C140062FDD8 /* LaunchScreen.storyboard */; };
 		08478F69215C0C140062FDD8 /* PicMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F68215C0C140062FDD8 /* PicMeTests.swift */; };
 		08478F74215C0C140062FDD8 /* PicMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08478F73215C0C140062FDD8 /* PicMeUITests.swift */; };
-		0876749F215FDB63006706D6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0876749E215FDB63006706D6 /* ProfileViewController.swift */; };
+		08682B6A21626DCA00F0D9AD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08682B6921626DCA00F0D9AD /* Post.swift */; };
+		088038D32162B20C00BBAF62 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088038D22162B20C00BBAF62 /* FeedViewController.swift */; };
 		08A0055F21608BA70071AB29 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0055E21608BA70071AB29 /* PostCell.swift */; };
+		08A0056321613D6D0071AB29 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0056221613D6D0071AB29 /* libsqlite3.tbd */; };
+		08A0056521613D860071AB29 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0056421613D860071AB29 /* libz.tbd */; };
+		08A0056721613D980071AB29 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0056621613D980071AB29 /* AudioToolbox.framework */; };
+		08A0056921613DAB0071AB29 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0056821613DAB0071AB29 /* CFNetwork.framework */; };
+		08A0056B21613DC00071AB29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0056A21613DC00071AB29 /* CoreGraphics.framework */; };
+		08A0056D21613DCE0071AB29 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0056C21613DCE0071AB29 /* CoreLocation.framework */; };
+		08A0056F21613DE00071AB29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0056E21613DE00071AB29 /* QuartzCore.framework */; };
+		08A0057121613DF10071AB29 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0057021613DF10071AB29 /* Security.framework */; };
+		08A0057321613E210071AB29 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0057221613E210071AB29 /* StoreKit.framework */; };
+		08A0057521613E2E0071AB29 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A0057421613E2E0071AB29 /* SystemConfiguration.framework */; };
+		08A005782161421A0071AB29 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A005762161421A0071AB29 /* Parse.framework */; };
+		08A005792161421A0071AB29 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A005772161421A0071AB29 /* Bolts.framework */; };
+		08A0057B216154A90071AB29 /* resetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A0057A216154A90071AB29 /* resetPasswordViewController.swift */; };
 		08A97D0C215C180D004DDDBA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0B215C180D004DDDBA /* LogInViewController.swift */; };
-		08A97D0E215C3A67004DDDBA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0D215C3A67004DDDBA /* HomeViewController.swift */; };
 		08A97D10215C3AD3004DDDBA /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */; };
 		08A97D12215C432B004DDDBA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A97D11215C432B004DDDBA /* SignUpViewController.swift */; };
+		08CD17182161CEC300D40A85 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CD17172161CEC300D40A85 /* PictureCell.swift */; };
 		7694BA757D786C3CBD412C85 /* Pods_PicMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20EC6225385473386CEAF62 /* Pods_PicMe.framework */; };
 		7A28E6295409ED78ECA9FE3A /* Pods_PicMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E901E495F54FA31DBDA3AB56 /* Pods_PicMeTests.framework */; };
 		E2123C32023FB080BD0BCD85 /* Pods_PicMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0288B8420952D311498359B5 /* Pods_PicMeUITests.framework */; };
@@ -44,6 +61,9 @@
 /* Begin PBXFileReference section */
 		0288B8420952D311498359B5 /* Pods_PicMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0418F434AC8C5714E6600AC1 /* Pods-PicMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMe.release.xcconfig"; path = "Target Support Files/Pods-PicMe/Pods-PicMe.release.xcconfig"; sourceTree = "<group>"; };
+		081A958C2161BCB700ABE656 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		081A958E2161CB0B00ABE656 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		081A95902161CB5D00ABE656 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		08478F50215C0C130062FDD8 /* PicMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08478F53215C0C130062FDD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08478F58215C0C130062FDD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,12 +76,27 @@
 		08478F6F215C0C140062FDD8 /* PicMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08478F73215C0C140062FDD8 /* PicMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicMeUITests.swift; sourceTree = "<group>"; };
 		08478F75215C0C140062FDD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0876749E215FDB63006706D6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		08682B6921626DCA00F0D9AD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		08682B6B216270C400F0D9AD /* PicMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicMe-Bridging-Header.h"; sourceTree = "<group>"; };
+		088038D22162B20C00BBAF62 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		08A0055E21608BA70071AB29 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		08A0056221613D6D0071AB29 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		08A0056421613D860071AB29 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		08A0056621613D980071AB29 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		08A0056821613DAB0071AB29 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		08A0056A21613DC00071AB29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		08A0056C21613DCE0071AB29 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		08A0056E21613DE00071AB29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		08A0057021613DF10071AB29 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		08A0057221613E210071AB29 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		08A0057421613E2E0071AB29 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		08A005762161421A0071AB29 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		08A005772161421A0071AB29 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		08A0057A216154A90071AB29 /* resetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetPasswordViewController.swift; sourceTree = "<group>"; };
 		08A97D0B215C180D004DDDBA /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		08A97D0D215C3A67004DDDBA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		08A97D11215C432B004DDDBA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		08CD17172161CEC300D40A85 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		0D3682458FAE7790CEDCCE8A /* Pods-PicMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMe.debug.xcconfig"; path = "Target Support Files/Pods-PicMe/Pods-PicMe.debug.xcconfig"; sourceTree = "<group>"; };
 		4FF921B164C77806E3280653 /* Pods-PicMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMeTests.release.xcconfig"; path = "Target Support Files/Pods-PicMeTests/Pods-PicMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		79719228F6228D72DE15D850 /* Pods-PicMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-PicMeUITests/Pods-PicMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +111,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A0057521613E2E0071AB29 /* SystemConfiguration.framework in Frameworks */,
+				08A0057321613E210071AB29 /* StoreKit.framework in Frameworks */,
+				08A0057121613DF10071AB29 /* Security.framework in Frameworks */,
+				08A0056F21613DE00071AB29 /* QuartzCore.framework in Frameworks */,
+				08A0056D21613DCE0071AB29 /* CoreLocation.framework in Frameworks */,
+				08A0056B21613DC00071AB29 /* CoreGraphics.framework in Frameworks */,
+				08A0056921613DAB0071AB29 /* CFNetwork.framework in Frameworks */,
+				08A005792161421A0071AB29 /* Bolts.framework in Frameworks */,
+				08A0056721613D980071AB29 /* AudioToolbox.framework in Frameworks */,
+				08A0056521613D860071AB29 /* libz.tbd in Frameworks */,
+				08A0056321613D6D0071AB29 /* libsqlite3.tbd in Frameworks */,
+				08A005782161421A0071AB29 /* Parse.framework in Frameworks */,
 				7694BA757D786C3CBD412C85 /* Pods_PicMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +149,9 @@
 		08478F47215C0C130062FDD8 = {
 			isa = PBXGroup;
 			children = (
+				08682B6B216270C400F0D9AD /* PicMe-Bridging-Header.h */,
+				08A005772161421A0071AB29 /* Bolts.framework */,
+				08A005762161421A0071AB29 /* Parse.framework */,
 				08478F52215C0C130062FDD8 /* PicMe */,
 				08478F67215C0C140062FDD8 /* PicMeTests */,
 				08478F72215C0C140062FDD8 /* PicMeUITests */,
@@ -130,6 +180,7 @@
 				08478F57215C0C130062FDD8 /* Main.storyboard */,
 				08478F5A215C0C140062FDD8 /* Assets.xcassets */,
 				08478F5C215C0C140062FDD8 /* LaunchScreen.storyboard */,
+				081A958C2161BCB700ABE656 /* Pacifico.ttf */,
 				08478F5F215C0C140062FDD8 /* Info.plist */,
 			);
 			path = PicMe;
@@ -158,9 +209,10 @@
 			children = (
 				08A97D0B215C180D004DDDBA /* LogInViewController.swift */,
 				08A97D11215C432B004DDDBA /* SignUpViewController.swift */,
-				08A97D0D215C3A67004DDDBA /* HomeViewController.swift */,
+				08A0057A216154A90071AB29 /* resetPasswordViewController.swift */,
+				081A958E2161CB0B00ABE656 /* ProfileViewController.swift */,
 				08A97D0F215C3AD3004DDDBA /* NewPostViewController.swift */,
-				0876749E215FDB63006706D6 /* ProfileViewController.swift */,
+				088038D22162B20C00BBAF62 /* FeedViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -169,6 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				08A0055E21608BA70071AB29 /* PostCell.swift */,
+				081A95902161CB5D00ABE656 /* ProfileHeaderView.swift */,
+				08CD17172161CEC300D40A85 /* PictureCell.swift */,
+				08682B6921626DCA00F0D9AD /* Post.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +244,16 @@
 		C98755E6182248A64EC824CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08A0057421613E2E0071AB29 /* SystemConfiguration.framework */,
+				08A0057221613E210071AB29 /* StoreKit.framework */,
+				08A0057021613DF10071AB29 /* Security.framework */,
+				08A0056E21613DE00071AB29 /* QuartzCore.framework */,
+				08A0056C21613DCE0071AB29 /* CoreLocation.framework */,
+				08A0056A21613DC00071AB29 /* CoreGraphics.framework */,
+				08A0056821613DAB0071AB29 /* CFNetwork.framework */,
+				08A0056621613D980071AB29 /* AudioToolbox.framework */,
+				08A0056421613D860071AB29 /* libz.tbd */,
+				08A0056221613D6D0071AB29 /* libsqlite3.tbd */,
 				D20EC6225385473386CEAF62 /* Pods_PicMe.framework */,
 				E901E495F54FA31DBDA3AB56 /* Pods_PicMeTests.framework */,
 				0288B8420952D311498359B5 /* Pods_PicMeUITests.framework */,
@@ -306,6 +371,7 @@
 			files = (
 				08478F5E215C0C140062FDD8 /* LaunchScreen.storyboard in Resources */,
 				08478F5B215C0C140062FDD8 /* Assets.xcassets in Resources */,
+				081A958D2161BCB700ABE656 /* Pacifico.ttf in Resources */,
 				08478F59215C0C130062FDD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,14 +469,18 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PicMe/Pods-PicMe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -425,12 +495,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				08A0055F21608BA70071AB29 /* PostCell.swift in Sources */,
-				0876749F215FDB63006706D6 /* ProfileViewController.swift in Sources */,
+				08682B6A21626DCA00F0D9AD /* Post.swift in Sources */,
 				08A97D12215C432B004DDDBA /* SignUpViewController.swift in Sources */,
+				08A0057B216154A90071AB29 /* resetPasswordViewController.swift in Sources */,
 				08478F54215C0C130062FDD8 /* AppDelegate.swift in Sources */,
 				08A97D0C215C180D004DDDBA /* LogInViewController.swift in Sources */,
-				08A97D0E215C3A67004DDDBA /* HomeViewController.swift in Sources */,
+				081A958F2161CB0B00ABE656 /* ProfileViewController.swift in Sources */,
+				081A95912161CB5D00ABE656 /* ProfileHeaderView.swift in Sources */,
 				08A97D10215C3AD3004DDDBA /* NewPostViewController.swift in Sources */,
+				088038D32162B20C00BBAF62 /* FeedViewController.swift in Sources */,
+				08CD17182161CEC300D40A85 /* PictureCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +682,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5D7WA4DHD4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PicMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -627,6 +705,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5D7WA4DHD4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = PicMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

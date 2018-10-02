@@ -11,12 +11,18 @@ import Parse
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var label2: UILabel!
+    
     @IBOutlet weak var userNameField: UITextField!
     
     @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.font = UIFont(name: "Pacifico", size: 60)
+        label2.font = UIFont(name: "Pacifico", size: 20)
     }
     
   
