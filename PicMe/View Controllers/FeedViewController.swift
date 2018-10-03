@@ -34,17 +34,18 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         self.navigationItem.title = "New Feed"
 
-        
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 450
+        
+        tableView.rowHeight = 650
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(FeedViewController.didPullToRefresh(_:)), for: .valueChanged)
         self.tableView.insertSubview(refreshControl, at: 0)
         
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 450
-        
+       
         // Set up Infinite Scroll loading indicator
         let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
         loadingMoreView = InfiniteScrollActivityView(frame: frame)
@@ -97,6 +98,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if error == nil {
                 if let newfeed = posts {
                     self.array = newfeed
+                    print("Posts are showing the new feed now.")
                 }
             } else {
                 print("Problem fetching posts: \(error!.localizedDescription)")

@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import Parse
+import MBProgressHUD
 
 class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -23,28 +24,27 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func postButton_Clicked(_ sender: Any) {
-        let postData = PFObject(className: "Post")
+        print("Post button pressed")
         
-        if let currentUser = PFUser.current() {
-            postData["author"] = currentUser
-        }
-        postData["caption"] = postTextField.text ?? ""
-        postData["postImage"] = postImage.image ?? ""
-        
-        postData.saveInBackground { (success, error) in
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        Post.postUserImage(image: resize(image: postImage.image!, newSize: CGSize(width: 300, height: 300)), withCaption: postTextField.text ?? "") { (success: Bool, error: Error?) in
+            MBProgressHUD.hide(for: self.view, animated: true)
             if success {
-                print("Post data sent successfully.")
-                self.postTextField.text = ""
-            } else if let error = error {
-                print("Problem saving post data: \(error.localizedDescription)")
+                self.tabBarController?.selectedIndex = 0
+                print("Successfully save data.")
             }
-        }
-    }
+            else {
+                let alert = UIAlertController(title: "An Error Occurred", message: error?.localizedDescription, preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(action)
+                self.show(alert, sender: nil)
+            }}}
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         let editedImage = resize(image: originalImage, newSize: CGSize(width: 640, height: 640))
         self.postImage.image = editedImage
+        print("Image set")
         dismiss(animated: true, completion: nil)
     }
     
@@ -91,3 +91,5 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
 }
+        
+
