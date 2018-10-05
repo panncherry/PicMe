@@ -38,6 +38,17 @@ class PostCell: UITableViewCell {
         avatarImg.layer.borderColor = #colorLiteral(red: 0.8831892449, green: 0.8831892449, blue: 0.8831892449, alpha: 0.7984535531)
         avatarImg.layer.borderWidth = 1
     }
+    
+    var instagramPost: PFObject! {
+        didSet {
+            self.postImage.file = instagramPost["postImage"] as? PFFile
+            let name = instagramPost["author"] as? PFUser
+            self.usernameLabel.text = name?.username
+            self.captionLabel.text =  instagramPost["caption"] as? String
+            self.dateLabel.text = instagramPost["_created_at"] as? String
+            self.postImage.loadInBackground()
+        }
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

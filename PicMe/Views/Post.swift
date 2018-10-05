@@ -31,6 +31,7 @@ class Post: PFObject, PFSubclassing {
         post.likesCount = 0
         post.commentsCount = 0
         post.avatarImg = getPFFileFromImage(image: image)!
+       // post.postImage = getPFFileFromImage(image: image)!
         
         post.saveInBackground(block: completion)
     }

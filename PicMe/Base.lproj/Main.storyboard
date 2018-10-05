@@ -146,7 +146,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hanging_polaroids_by_anushka04-d5h9g8h" translatesAutoresizingMaskIntoConstraints="NO" id="6zM-EJ-xtY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="butterfly" translatesAutoresizingMaskIntoConstraints="NO" id="6zM-EJ-xtY">
                                                     <rect key="frame" x="20" y="53" width="385" height="325"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="385" id="Czu-wz-d2f"/>
@@ -162,7 +162,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GU3-BW-f3g">
                                                     <rect key="frame" x="20.000000000000007" y="465.66666666666669" width="103.66666666666669" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpL-sx-36H">
@@ -799,9 +798,9 @@
     </scenes>
     <resources>
         <image name="background" width="526" height="350"/>
+        <image name="butterfly" width="700" height="700"/>
         <image name="comment" width="270" height="270"/>
         <image name="feed_tab" width="25" height="25"/>
-        <image name="hanging_polaroids_by_anushka04-d5h9g8h" width="900" height="273"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="more" width="270" height="270"/>
         <image name="pp" width="96" height="96"/>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NotificationCenter
+import MBProgressHUD
 import Parse
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
@@ -18,6 +18,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // arrays to hold server data
     var array: [PFObject] = []
+
     var page : Int = 0
     var offset : Int = 20
     var isMoreDataLoading = false
@@ -38,12 +39,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 450
-        
-        tableView.rowHeight = 650
+        tableView.rowHeight = 600
         
         refreshControl = UIRefreshControl()
+        tableView.insertSubview(refreshControl, at: 0)
+        
         refreshControl.addTarget(self, action: #selector(FeedViewController.didPullToRefresh(_:)), for: .valueChanged)
-        self.tableView.insertSubview(refreshControl, at: 0)
         
        
         // Set up Infinite Scroll loading indicator
@@ -55,7 +56,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var insets = tableView.contentInset
         insets.bottom += InfiniteScrollActivityView.defaultHeight
         tableView.contentInset = insets
-        
+        //MBProgressHUD.showAdded(to: self.view, animated: true)
+
         fetchPosts()
         logOutAlert()
 
@@ -67,13 +69,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        
         let posts = array[indexPath.row]
         let user = posts["author"] as? PFUser
         cell.usernameLabel.text = user?.username
-        cell.avatarImg.image = posts["avatarImg"] as? UIImage
-        cell.postImage.image = posts["postImg"] as? UIImage
+        //cell.avatarImg.image = posts["avatarImg"] as! UIImage
+        //cell.postImage.image = posts["postImg"] as! UIImage
         cell.captionLabel.text = posts["caption"] as? String
-        cell.dateLabel.text = posts["createAt"] as? String
+        cell.dateLabel.text = posts["_created_at"] as? String
         return cell
     }
     
