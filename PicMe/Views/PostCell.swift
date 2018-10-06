@@ -41,13 +41,14 @@ class PostCell: UITableViewCell {
     
     var instagramPost: PFObject! {
         didSet {
-            self.postImage.file = instagramPost["postImage"] as? PFFile
-            self.avatarImg.file = instagramPost["avatarImg"] as? PFFile
             let name = instagramPost["author"] as? PFUser
             self.usernameLabel.text = name?.username
             self.captionLabel.text =  instagramPost["caption"] as? String
             self.dateLabel.text = instagramPost["createdAt"] as? String
+            self.postImage.file = instagramPost["postImage"] as? PFFile
+            self.avatarImg.file = instagramPost["avatarImg"] as? PFFile
             self.postImage.loadInBackground()
+            self.avatarImg.loadInBackground()
         }
     }
 

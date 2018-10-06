@@ -12,12 +12,9 @@ import Parse
 import ParseUI
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
-    
     var refreshControl: UIRefreshControl!
     var window: UIWindow?
     var alertController: UIAlertController!
-    
-    // arrays to hold server data
     var array: [PFObject] = []
 
     var page : Int = 0
@@ -27,7 +24,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var loadingMoreView: InfiniteScrollActivityView!
     
    // @IBOutlet weak var showActivity: UIActivityIndicatorView!
-        
+    
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -58,7 +55,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //MBProgressHUD.showAdded(to: self.view, animated: true)
 
         refreshScreen()
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshScreen), userInfo: nil, repeats: true)
+        //Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshScreen), userInfo: nil, repeats: true)
         logOutAlert()
 
     }
@@ -73,7 +70,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let user = posts["author"] as? PFUser
         cell.usernameLabel.text = user?.username
         cell.avatarImg.file = posts["avatarImg"] as? PFFile
-        cell.postImage.file = posts["postImg"] as? PFFile
+        cell.postImage.file = posts["postImage"] as? PFFile
+        cell.avatarImg.loadInBackground()
+        cell.postImage.loadInBackground()
         cell.captionLabel.text = posts["caption"] as? String
         cell.dateLabel.text = posts["createdAt"] as? String
         return cell
@@ -122,17 +121,30 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query?.findObjectsInBackground { (allPosts, error) in
             if error == nil {
                 if let posts = allPosts {
+                    self.array.removeAll()
                     for post in posts {
                         self.array.append(post)
+                        self.tableView.reloadData()
                         print("Posts are showing the new feed now.")
                     }
                 }
             } else {
                 print("Problem fetching posts: \(error?.localizedDescription)")
             }
-            self.tableView.reloadData()
+           // self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
+    }
+    
+    func UTCToLocal(UTCDateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a" //Input Format
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        let UTCDate = dateFormatter.date(from: UTCDateString)
+        dateFormatter.dateFormat = "yyyy-MMM-dd hh:mm:ss a" // Output Format
+        dateFormatter.timeZone = TimeZone.current
+        let UTCToCurrentFormat = dateFormatter.string(from: UTCDate!)
+        return UTCToCurrentFormat
     }
 
     
