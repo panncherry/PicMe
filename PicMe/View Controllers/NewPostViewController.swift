@@ -31,6 +31,8 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
             MBProgressHUD.hide(for: self.view, animated: true)
             if success {
                 self.tabBarController?.selectedIndex = 0
+                self.postTextField.text = ""
+                self.postImage.image = UIImage(named: "pbg.jpg")
                 print("Successfully save data.")
             }
             else {

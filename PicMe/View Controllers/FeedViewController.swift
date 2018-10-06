@@ -55,7 +55,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //MBProgressHUD.showAdded(to: self.view, animated: true)
 
         refreshScreen()
-        //Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshScreen), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshScreen), userInfo: nil, repeats: true)
         logOutAlert()
 
     }
@@ -91,28 +91,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc func refresh() {
         tableView.reloadData()
     }
-    
-    // fetch posts
-    /*func fetchPosts(){
-        let query = PFQuery(className: "Post")
-        query.addDescendingOrder("createdAt")
-        query.includeKey("author")
-        
-        query.findObjectsInBackground(){
-            (posts: [PFObject]?, error: Error?) in
-            if error == nil {
-                if let newfeed = posts {
-                    self.array = newfeed
-                    print("Posts are showing the new feed now.")
-                }
-            } else {
-                print("Problem fetching posts: \(error!.localizedDescription)")
-            }
-        }
-      
-        self.tableView.reloadData()
-        self.refreshControl.endRefreshing()
-    }*/
     
     func fetchPosts() {
         let query = Post.query()
