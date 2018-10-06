@@ -9,6 +9,7 @@
 import UIKit
 import MBProgressHUD
 import Parse
+import ParseUI
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
     
@@ -26,9 +27,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var loadingMoreView: InfiniteScrollActivityView!
     
    // @IBOutlet weak var showActivity: UIActivityIndicatorView!
-    
-    let query = Post.query()
-    
+        
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -39,7 +38,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 450
-        tableView.rowHeight = 600
+       // tableView.rowHeight = 650
         
         refreshControl = UIRefreshControl()
         tableView.insertSubview(refreshControl, at: 0)
@@ -58,7 +57,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.contentInset = insets
         //MBProgressHUD.showAdded(to: self.view, animated: true)
 
-        fetchPosts()
+        refreshScreen()
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshScreen), userInfo: nil, repeats: true)
         logOutAlert()
 
     }
@@ -69,17 +69,19 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
-        
         let posts = array[indexPath.row]
         let user = posts["author"] as? PFUser
         cell.usernameLabel.text = user?.username
-        //cell.avatarImg.image = posts["avatarImg"] as! UIImage
-        //cell.postImage.image = posts["postImg"] as! UIImage
+        cell.avatarImg.file = posts["avatarImg"] as? PFFile
+        cell.postImage.file = posts["postImg"] as? PFFile
         cell.captionLabel.text = posts["caption"] as? String
-        cell.dateLabel.text = posts["_created_at"] as? String
+        cell.dateLabel.text = posts["createdAt"] as? String
         return cell
     }
     
+    @objc func refreshScreen() {
+       fetchPosts()
+    }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl ) {
         fetchPosts()
@@ -91,7 +93,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     // fetch posts
-    func fetchPosts(){
+    /*func fetchPosts(){
         let query = PFQuery(className: "Post")
         query.addDescendingOrder("createdAt")
         query.includeKey("author")
@@ -107,8 +109,30 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 print("Problem fetching posts: \(error!.localizedDescription)")
             }
         }
+      
         self.tableView.reloadData()
         self.refreshControl.endRefreshing()
+    }*/
+    
+    func fetchPosts() {
+        let query = Post.query()
+        query?.order(byDescending: "createdAt")
+        query?.includeKey("author")
+        
+        query?.findObjectsInBackground { (allPosts, error) in
+            if error == nil {
+                if let posts = allPosts {
+                    for post in posts {
+                        self.array.append(post)
+                        print("Posts are showing the new feed now.")
+                    }
+                }
+            } else {
+                print("Problem fetching posts: \(error?.localizedDescription)")
+            }
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
     }
 
     

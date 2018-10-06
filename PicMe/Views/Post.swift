@@ -17,6 +17,7 @@ class Post: PFObject, PFSubclassing {
     @NSManaged var caption: String
     @NSManaged var likesCount: Int
     @NSManaged var commentsCount: Int
+    @NSManaged var date: String
     
     //returns the Parse name that should be used
     class func parseClassName() -> String {
@@ -24,15 +25,19 @@ class Post: PFObject, PFSubclassing {
     }
     
     class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
-        // use subclass approach
         let post = Post()
         post.author = PFUser.current()!
         post.caption = caption!
         post.likesCount = 0
         post.commentsCount = 0
         post.avatarImg = getPFFileFromImage(image: image)!
-       // post.postImage = getPFFileFromImage(image: image)!
-        
+        post.saveInBackground(block: completion)
+    }
+    
+    class func displayPostImage(image: UIImage?, withCompletion completion: PFBooleanResultBlock?) {
+        let post = Post()
+        post.postImage = getPFFileFromImage(image: image)!
+        post.author = PFUser.current()!
         post.saveInBackground(block: completion)
     }
         

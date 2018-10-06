@@ -34,7 +34,7 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         avatarImg.clipsToBounds = true
-        avatarImg.layer.cornerRadius = 15
+        avatarImg.layer.cornerRadius = 20
         avatarImg.layer.borderColor = #colorLiteral(red: 0.8831892449, green: 0.8831892449, blue: 0.8831892449, alpha: 0.7984535531)
         avatarImg.layer.borderWidth = 1
     }
@@ -42,10 +42,11 @@ class PostCell: UITableViewCell {
     var instagramPost: PFObject! {
         didSet {
             self.postImage.file = instagramPost["postImage"] as? PFFile
+            self.avatarImg.file = instagramPost["avatarImg"] as? PFFile
             let name = instagramPost["author"] as? PFUser
             self.usernameLabel.text = name?.username
             self.captionLabel.text =  instagramPost["caption"] as? String
-            self.dateLabel.text = instagramPost["_created_at"] as? String
+            self.dateLabel.text = instagramPost["createdAt"] as? String
             self.postImage.loadInBackground()
         }
     }
