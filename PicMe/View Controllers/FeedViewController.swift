@@ -79,7 +79,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @objc func refreshScreen() {
-       fetchPosts()
+        tableView.reloadData()
+        fetchPosts()
     }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl ) {
@@ -124,14 +125,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     self.array.removeAll()
                     for post in posts {
                         self.array.append(post)
-                        self.tableView.reloadData()
-                        print("Posts are showing the new feed now.")
+                        //print("Posts are showing the new feed now.")
                     }
                 }
             } else {
                 print("Problem fetching posts: \(error?.localizedDescription)")
             }
-           // self.tableView.reloadData()
+            self.tableView.reloadData()
             self.refreshControl.endRefreshing()
         }
     }

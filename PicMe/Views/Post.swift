@@ -24,23 +24,24 @@ class Post: PFObject, PFSubclassing {
         return "Post"
     }
     
-    class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
+    class func postUserImage(profile: UIImage? = UIImage(named: "home"),image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
         let post = Post()
         post.author = PFUser.current()!
         post.caption = caption!
         post.likesCount = 0
         post.commentsCount = 0
+        post.avatarImg = getPFFileFromImage(image: profile)!
         post.postImage = getPFFileFromImage(image: image)!
         post.saveInBackground(block: completion)
     }
     
-    /*class func displayUseImage(image: UIImage?, withCompletion completion: PFBooleanResultBlock?) {
+    class func displayPostImage(image: UIImage?, withCompletion completion: PFBooleanResultBlock?) {
         let post = Post()
         post.postImage = getPFFileFromImage(image: image)!
         post.author = PFUser.current()!
         post.saveInBackground(block: completion)
     }
-        */
+    
     class func getPFFileFromImage(image: UIImage?) -> PFFile? {
         if let image = image {
             if let imageData = image.pngData() {
