@@ -16,7 +16,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var window: UIWindow?
     var alertController: UIAlertController!
     var array: [PFObject] = []
-
+    var isZooming = false
+    var originalImageCenter:CGPoint?
     var page : Int = 0
     var offset : Int = 20
     var isMoreDataLoading = false
@@ -56,6 +57,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         refreshScreen()
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshScreen), userInfo: nil, repeats: true)
+        
         logOutAlert()
 
     }
@@ -74,7 +76,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.avatarImg.loadInBackground()
         cell.postImage.loadInBackground()
         cell.captionLabel.text = posts["caption"] as? String
-        cell.dateLabel.text = posts["createdAt"] as? String
+        
+        let date = posts.createdAt
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a" //Input Format
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        let stringDate = dateFormatter.string(from: date!)
+        let currentDate = self.UTCToLocal(UTCDateString: stringDate)
+        
+        cell.dateLabel.text = currentDate as? String
         return cell
     }
     
@@ -85,11 +95,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl ) {
         fetchPosts()
-    }
-    
-    // refreshign function after like to update degit
-    @objc func refresh() {
-        tableView.reloadData()
     }
     
     func fetchPosts() {
@@ -151,4 +156,35 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         alertController.addAction(cancelButton)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let posts = array[indexPath.row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.posts = posts
+            detailViewController.imageFile = posts["postImage"] as? PFFile
+            detailViewController.caption = posts["caption"] as? String
+            let date = posts.createdAt
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a" //Input Format
+            dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+            let stringDate = dateFormatter.string(from: date!)
+            let currentDate = self.UTCToLocal(UTCDateString: stringDate)
+            detailViewController.date = currentDate as? String
+         
+        }
+    }
+    
+    //code to customize navigation bar
+    override func viewDidAppear(_ animated: Bool) {
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.black
+        nav?.tintColor = UIColor.yellow
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "camera-1")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        navigationItem.title = "Back to New Feed"
+    }
 }
