@@ -21,6 +21,12 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper.jpg")!)
+        userNameField.attributedPlaceholder =
+            NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        passwordField.attributedPlaceholder =
+            NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+
         label.font = UIFont(name: "Pacifico", size: 60)
         label2.font = UIFont(name: "Pacifico", size: 20)
     }
