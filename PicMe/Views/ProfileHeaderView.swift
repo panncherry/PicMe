@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import ParseUI
 
 class ProfileHeaderView: UICollectionReusableView {
         
-    @IBOutlet weak var avatarImg: UIImageView!
+    @IBOutlet weak var avatarImg: PFImageView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var websiteTextField: UITextView!
     @IBOutlet weak var bioLabel: UILabel!

@@ -8,9 +8,10 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class ProfileViewController: UICollectionViewController {
-
+var array: [PFObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
        //collectionView.backgroundColor = .white
@@ -23,6 +24,7 @@ class ProfileViewController: UICollectionViewController {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath as IndexPath) as! ProfileHeaderView
+     
         header.fullNameLabel.text = (PFUser.current()?.object(forKey: "fullname") as? String)?.uppercased()
         header.websiteTextField.text = PFUser.current()?.object(forKey: "website") as? String
         header.websiteTextField.sizeToFit()
