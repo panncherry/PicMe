@@ -4,7 +4,7 @@
 
 
 
-## API & Backend Services
+## API and Backend Services
 - [x] Parse
 
 
