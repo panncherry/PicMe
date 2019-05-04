@@ -178,9 +178,10 @@
 		08478F52215C0C130062FDD8 /* PicMe */ = {
 			isa = PBXGroup;
 			children = (
+				08478F53215C0C130062FDD8 /* AppDelegate.swift */,
+				08D1DD4E225BA69500D35AEE /* Modals */,
 				08A0055D21608B830071AB29 /* Views */,
 				0876749D215FDB14006706D6 /* View Controllers */,
-				08478F53215C0C130062FDD8 /* AppDelegate.swift */,
 				08478F57215C0C130062FDD8 /* Main.storyboard */,
 				08478F5A215C0C140062FDD8 /* Assets.xcassets */,
 				08478F5C215C0C140062FDD8 /* LaunchScreen.storyboard */,
@@ -225,13 +226,20 @@
 		08A0055D21608B830071AB29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08682B6921626DCA00F0D9AD /* Post.swift */,
 				08A0055E21608BA70071AB29 /* PostCell.swift */,
-				081A95902161CB5D00ABE656 /* ProfileHeaderView.swift */,
 				08CD17172161CEC300D40A85 /* PictureCell.swift */,
+				08682B6921626DCA00F0D9AD /* Post.swift */,
 				08C106292163D65C00DCC631 /* InfiniteScrollActivityView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		08D1DD4E225BA69500D35AEE /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				081A95902161CB5D00ABE656 /* ProfileHeaderView.swift */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 		BD967AD492B77C98FDB3060E /* Pods */ = {
