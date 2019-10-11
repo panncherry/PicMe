@@ -10,6 +10,7 @@ import UIKit
 import ParseUI
 
 class PostCell: UITableViewCell {
+    
     //user profile image and name
     @IBOutlet weak var avatarImg: PFImageView!
     @IBOutlet weak var usernameLabel: UILabel!

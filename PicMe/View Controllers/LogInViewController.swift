@@ -11,34 +11,20 @@ import Parse
 
 class LogInViewController: UIViewController {
     
+    // MARK: IBOutlets
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    
+    // MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUIView()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper.jpg")!)
-        
-        userNameField.attributedPlaceholder = NSAttributedString(string: "username",
-                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-        passwordField.attributedPlaceholder = NSAttributedString(string: "password",
-                                                                 attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-        label.font = UIFont(name: "Pacifico", size: 60)
-        label2.font = UIFont(name: "Pacifico", size: 20)
     }
     
-    
-    /*:
-     # Sign In
-     * Check user creditials
-     * Display log in error alert if user name is empty
-     * If user is not empty, perform segue and show FeedViewController
-     */
+    // MARK: - IBActions
     @IBAction func onSignIn(_ sender: Any) {
         PFUser.logInWithUsername(inBackground: userNameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
             if user == nil {
@@ -51,16 +37,33 @@ class LogInViewController: UIViewController {
                 self.passwordField.text = ""
                 self.performSegue(withIdentifier: "logInSegue", sender: nil)
             }
-            
         }
     }
     
+    // Dismiss Keyboard
+    @IBAction func onTapDismissKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
     
-    /*:
-     # Log In Error Alert
-     * Notify using action sheet for error
-     * Clear username and password textfileds, so that user can enter again
-     */
+    
+    // MARK: - Helper Functions
+    private func setUpUIView() {
+        label.font = UIFont(name: "Pacifico", size: 60)
+        label2.font = UIFont(name: "Pacifico", size: 20)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "wallpaper.jpg")!)
+        userNameField.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        userNameField.layer.cornerRadius = 15.0
+        userNameField.layer.borderWidth = 2.0
+        userNameField.layer.borderColor = UIColor.red.cgColor
+        userNameField.layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
+        
+        passwordField.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        passwordField.layer.cornerRadius = 15.0
+        passwordField.layer.borderWidth = 2.0
+        passwordField.layer.borderColor = UIColor.red.cgColor
+        passwordField.layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
+    }
+    
     func loginErrorAlert(){
         let alert = UIAlertController(title: "Login Error", message: "Hmm..something went wrong. or Username/Email is missing.", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -68,15 +71,6 @@ class LogInViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         userNameField.text = ""
         passwordField.text = ""
-    }
-    
-    
-    /*:
-     # Dismiss Keyboard
-     * Dismiss the keyboard on tapping anywhere on the screen
-     */
-    @IBAction func onTapDismissKeyboard(_ sender: Any) {
-        view.endEditing(true)
     }
     
 }

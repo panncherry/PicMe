@@ -11,11 +11,14 @@ import Parse
 import ParseUI
 
 class ProfileViewController: UICollectionViewController {
-var array: [PFObject] = []
+    
+    // MARK: Properties
+    var array: [PFObject] = []
+    
+    // MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
        //collectionView.backgroundColor = .white
-        
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

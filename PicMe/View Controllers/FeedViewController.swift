@@ -12,38 +12,41 @@ import Parse
 import ParseUI
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
+    
+    // MARK: Properties
     var refreshControl: UIRefreshControl!
     var window: UIWindow?
     var alertController: UIAlertController!
     var array: [PFObject] = []
     var isZooming = false
     var originalImageCenter:CGPoint?
-    var page : Int = 0
+    var page : Int = 1
     var offset : Int = 20
     var isMoreDataLoading = false
     
     var loadingMoreView: InfiniteScrollActivityView!
     
-   // @IBOutlet weak var showActivity: UIActivityIndicatorView!
-    
+    // @IBOutlet weak var showActivity: UIActivityIndicatorView!
+    // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
-
+    
+    // MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New Feed"
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 450
-       // tableView.rowHeight = 650
+        // tableView.rowHeight = 650
         
         refreshControl = UIRefreshControl()
         tableView.insertSubview(refreshControl, at: 0)
         
         refreshControl.addTarget(self, action: #selector(FeedViewController.didPullToRefresh(_:)), for: .valueChanged)
         
-       
+        
         // Set up Infinite Scroll loading indicator
         let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
         loadingMoreView = InfiniteScrollActivityView(frame: frame)
@@ -54,14 +57,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         insets.bottom += InfiniteScrollActivityView.defaultHeight
         tableView.contentInset = insets
         //MBProgressHUD.showAdded(to: self.view, animated: true)
-
+        
         refreshScreen()
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshScreen), userInfo: nil, repeats: true)
         
         logOutAlert()
-
+        
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
     }
@@ -84,7 +87,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let stringDate = dateFormatter.string(from: date!)
         let currentDate = self.UTCToLocal(UTCDateString: stringDate)
         
-        cell.dateLabel.text = currentDate as? String
+        cell.dateLabel.text = currentDate
         return cell
     }
     
@@ -112,7 +115,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
                 }
             } else {
-                print("Problem fetching posts: \(error?.localizedDescription)")
+                print("Problem fetching posts: \(error?.localizedDescription ?? "")")
             }
             self.tableView.reloadData()
             self.refreshControl.endRefreshing()
@@ -129,7 +132,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let UTCToCurrentFormat = dateFormatter.string(from: UTCDate!)
         return UTCToCurrentFormat
     }
-
+    
     
     @IBAction func logOutBtn_Clicked(_ sender: Any) {
         PFUser.logOutInBackground(block: { (error) in
@@ -170,8 +173,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
             let stringDate = dateFormatter.string(from: date!)
             let currentDate = self.UTCToLocal(UTCDateString: stringDate)
-            detailViewController.date = currentDate as? String
-         
+            detailViewController.date = currentDate 
+            
         }
     }
     
@@ -182,7 +185,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         nav?.tintColor = UIColor.yellow
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "camera-1")
+        let image = UIImage(named: "Like")
         imageView.image = image
         navigationItem.titleView = imageView
         navigationItem.title = "Back to New Feed"

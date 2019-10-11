@@ -13,6 +13,7 @@ import Photos
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var window: UIWindow?
     
+    // MARK: IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var emailField: UITextField!
@@ -24,13 +25,14 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var websiteTextField: UITextField!
     @IBOutlet weak var createAccountBtn: UIButton!
     
-    
+    // MARK: Properties
     //reset default size
     var scrollViewHeight: CGFloat = 0
     
     //keyboard frame size
     var keyboard = CGRect()
     
+    // MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,65 +55,24 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         avatarImg.addGestureRecognizer(avatarImageTap)
     }
     
-
-    /*:
-     # Show Keyboard
-     */
-    @objc func showKeyboard(notification: NSNotification){
-        keyboard = ((notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue)!
-        UIView.animate(withDuration: 0.4) {
-            self.scrollView.frame.size.height = self.scrollViewHeight - self.keyboard.height
-        }
-    }
     
-    /*:
-     # Hide Keyboard
-     */
-    @objc func hideKeyboard(notification: NSNotification){
-        UIView.animate(withDuration: 0.4) {
-            self.scrollView.frame.size.height = self.view.frame.height
-        }
-    }
-    
-    
-    /*:
-     # Close Button
-     * Dimiss the current viewController when click on close button
-     */
+    // MARK: - IBActions
     @IBAction func closeButton(_ sender: Any) {
-        self.view.window!.rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
+        self.view.window!.rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil) // Dimiss the current viewController when click on close button
     }
     
-    
-    /*:
-     # Sign up button
-     * Create new account
-     * If username, password, repeat passord, email, fullname, bio, and website textfields are empty
-     * Display alert sheet "Invalid entry"
-     */
     @IBAction func createAccount(_ sender: Any) {
         print("create account pressed")
         
         // If user enter empty
         if(userNameField.text!.isEmpty || passwordField.text!.isEmpty || repeatPasswordField.text!.isEmpty || emailField.text!.isEmpty || fullnameField.text!.isEmpty || bioTextField.text!.isEmpty || websiteTextField.text!.isEmpty){
-            let alert = UIAlertController(title: "Invalid Entry", message: "Please fill out all fields.", preferredStyle: UIAlertController.Style.alert)
-            let okay = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
-            alert.addAction(okay)
-            self.present(alert, animated: true, completion: nil)
+            displayAlert(title: "Error", message: "All fields are required")
         }
         
         // If password doesn't match
         if passwordField.text != repeatPasswordField.text {
-            let alert = UIAlertController(title: "Password", message: "Password does not match.", preferredStyle: UIAlertController.Style.alert)
-            let okay = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
-            alert.addAction(okay)
-            self.present(alert, animated: true, completion: nil)
-            passwordField.text = ""
-            repeatPasswordField.text = ""
-            fullnameField.text = ""
-            bioTextField.text = ""
-            websiteTextField.text = ""
-            emailField.text = ""
+            displayAlert(title: "Error", message: "Password does not match")
+            clearTextFields()
         }
         
         // Send data to server
@@ -146,124 +107,89 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print(error?.localizedDescription as Any)
                 if error?._code == 200 {
                     print("Bad or missing username.")
-                    self.alert(title: "Error", message: "Bad or missing username.")
+                    self.alert()
                 }
                 if error?._code == 201 {
                     print("Password is required.")
-                    self.passwordRequiredAlert(title: "Error", message: "Password is required")
+                    self.passwordRequiredAlert()
                 }
                 if error?._code == 202 {
                     print("User name is already taken!")
-                    self.userTakenAlert(title: "Error", message: "Username is already taken. or Account already exists for this email address.")
+                    self.userTakenAlert()
                 }
                 if error?._code == 203 {
                     print("Account already exists for this email address.")
-                    self.userTakenAlert(title: "Error", message: "Account already exists for this email address.")
+                    self.userTakenAlert()
                 }
             }
         }
     }
     
-    
-    /*:
-     # Bad or Missing username Alert
-     * Show alert if username is missing or wrong.
-     * Clear textFields
-     */
-    func alert(title: String, message: String){
-        let alert = UIAlertController(title: "Error", message: "Bad or missing username.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(defaultAction)
-        self.present(alert, animated: true, completion: nil)
-        userNameField.text = ""
-        passwordField.text = ""
-        repeatPasswordField.text = ""
-        fullnameField.text = ""
-        bioTextField.text = ""
-        websiteTextField.text = ""
-        emailField.text = ""
-    }
-    
-    
-    /*:
-     # User Taken Alert
-     * Display message, "username is already taken"
-     * Clear text fields
-     */
-    func userTakenAlert(title: String, message: String){
-        let alert = UIAlertController(title: "Error", message: "Username is already taken. OR Account already exists for this email address.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(defaultAction)
-        self.present(alert, animated: true, completion: nil)
-        userNameField.text = ""
-        passwordField.text = ""
-        repeatPasswordField.text = ""
-        fullnameField.text = ""
-        bioTextField.text = ""
-        websiteTextField.text = ""
-        emailField.text = ""
-    }
-    
-    
-    /*:
-     # Password Required Alert
-     * Display alert message, "Password is required"
-     * Clear text fields
-     */
-    func passwordRequiredAlert(title: String, message: String){
-        let alert = UIAlertController(title: "Error", message: "Password is required.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(defaultAction)
-        self.present(alert, animated: true, completion: nil)
-        userNameField.text = ""
-        passwordField.text = ""
-        repeatPasswordField.text = ""
-        fullnameField.text = ""
-        bioTextField.text = ""
-        websiteTextField.text = ""
-        emailField.text = ""
-    }
-    
-    
-    /*:
-     # Account Already Exist Alter
-     * Create new account
-     */
-    func accountExistAlert(title: String, message: String){
-        let alert = UIAlertController(title: "Error", message: "Account already exists for this email address.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(defaultAction)
-        self.present(alert, animated: true, completion: nil)
-        userNameField.text = ""
-        passwordField.text = ""
-        repeatPasswordField.text = ""
-        fullnameField.text = ""
-        bioTextField.text = ""
-        websiteTextField.text = ""
-        emailField.text = ""
-    }
-    
-    func newUserCreatedAlert(title: String, message: String){
-        let alert = UIAlertController(title: "Congratulations!!!", message: "Your account is created.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(defaultAction)
-        self.present(alert, animated: true, completion: nil)
-        userNameField.text = ""
-        passwordField.text = ""
-        repeatPasswordField.text = ""
-        fullnameField.text = ""
-        bioTextField.text = ""
-        websiteTextField.text = ""
-        emailField.text = ""
-    }
-  
     //dismiss keyboard on tap
     @IBAction func onTapDismissKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
     
+    // MARK: - Helper Functions
+    //Show Keyboard
+    @objc func showKeyboard(notification: NSNotification){
+        keyboard = ((notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue)!
+        UIView.animate(withDuration: 0.4) {
+            self.scrollView.frame.size.height = self.scrollViewHeight - self.keyboard.height
+        }
+    }
+    
+    // Hide Keyboard
+    @objc func hideKeyboard(notification: NSNotification){
+        UIView.animate(withDuration: 0.4) {
+            self.scrollView.frame.size.height = self.view.frame.height
+        }
+    }
+    
+    func alert(){
+        displayAlert(title: "Error", message: "Bad or missing username.")
+        clearTextFields()
+    }
+    
+    func userTakenAlert(){
+        displayAlert(title: "Error", message: "Username is already taken. OR Account already exists for this email address.")
+        clearTextFields()
+    }
+    
+    func passwordRequiredAlert(){
+        displayAlert(title: "Error", message: "Password is required.")
+        clearTextFields()
+    }
+    
+    func accountExistAlert(){
+        displayAlert(title: "Error", message: "Account already exists for this email address.")
+        clearTextFields()
+    }
+    
+    func newUserCreatedAlert(){
+        displayAlert(title: "Congratulations!!!", message: "Your account is created.")
+        clearTextFields()
+    }
+    
+    private func displayAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(defaultAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func clearTextFields() {
+        userNameField.text = ""
+        passwordField.text = ""
+        repeatPasswordField.text = ""
+        fullnameField.text = ""
+        bioTextField.text = ""
+        websiteTextField.text = ""
+        emailField.text = ""
+    }
+    
     //call imagePicker to select image
-    @objc func loadImage(recognizer:UITapGestureRecognizer) {
+    @objc private func loadImage(recognizer:UITapGestureRecognizer) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
@@ -285,7 +211,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         dismiss(animated: true, completion: nil)
     }
     
-    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+    private func resize(image: UIImage, newSize: CGSize) -> UIImage {
         let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         resizeImageView.contentMode = UIView.ContentMode.scaleAspectFill
         resizeImageView.image = image

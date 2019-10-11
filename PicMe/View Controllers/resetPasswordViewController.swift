@@ -10,24 +10,22 @@ import UIKit
 import Parse
 
 class resetPasswordViewController: UIViewController {
-
+    
+    // MARK: IBOutlets
     @IBOutlet weak var label: UILabel!
-    
     @IBOutlet weak var label2: UILabel!
-    
     @IBOutlet weak var emailField: UITextField!
-    
     @IBOutlet weak var resetBtn: UIButton!
-    
     @IBOutlet weak var cancelBtn: UIButton!
     
-    
+    // MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         label.font = UIFont(name: "Pacifico", size: 60)
         label2.font = UIFont(name: "Pacifico", size: 20)
     }
     
+    // MARK: IBActions
     @IBAction func resetBtn_clicked(_ sender: Any) {
         self.view.endEditing(true)
         if (emailField.text!.isEmpty) {
@@ -44,11 +42,10 @@ class resetPasswordViewController: UIViewController {
                 alert.addAction(okay)
                 self.present(alert, animated: true, completion: nil)
             } else {
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "")
             }
         }
-}
-    
+    }
     
     @IBAction func cancelBtn_clicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

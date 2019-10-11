@@ -153,9 +153,6 @@
 		08478F47215C0C130062FDD8 = {
 			isa = PBXGroup;
 			children = (
-				08682B6B216270C400F0D9AD /* PicMe-Bridging-Header.h */,
-				08A005772161421A0071AB29 /* Bolts.framework */,
-				08A005762161421A0071AB29 /* Parse.framework */,
 				08478F52215C0C130062FDD8 /* PicMe */,
 				08478F67215C0C140062FDD8 /* PicMeTests */,
 				08478F72215C0C140062FDD8 /* PicMeUITests */,
@@ -178,14 +175,14 @@
 		08478F52215C0C130062FDD8 /* PicMe */ = {
 			isa = PBXGroup;
 			children = (
+				08682B6B216270C400F0D9AD /* PicMe-Bridging-Header.h */,
 				08478F53215C0C130062FDD8 /* AppDelegate.swift */,
 				08D1DD4E225BA69500D35AEE /* Modals */,
 				08A0055D21608B830071AB29 /* Views */,
 				0876749D215FDB14006706D6 /* View Controllers */,
-				08478F57215C0C130062FDD8 /* Main.storyboard */,
+				08EC5E8C2350520100BD53DD /* Storyboards */,
+				08EC5E8D2350522A00BD53DD /* Custom Fonts */,
 				08478F5A215C0C140062FDD8 /* Assets.xcassets */,
-				08478F5C215C0C140062FDD8 /* LaunchScreen.storyboard */,
-				081A958C2161BCB700ABE656 /* Pacifico.ttf */,
 				08478F5F215C0C140062FDD8 /* Info.plist */,
 			);
 			path = PicMe;
@@ -226,9 +223,10 @@
 		08A0055D21608B830071AB29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				08682B6921626DCA00F0D9AD /* Post.swift */,
 				08A0055E21608BA70071AB29 /* PostCell.swift */,
 				08CD17172161CEC300D40A85 /* PictureCell.swift */,
-				08682B6921626DCA00F0D9AD /* Post.swift */,
+				081A95902161CB5D00ABE656 /* ProfileHeaderView.swift */,
 				08C106292163D65C00DCC631 /* InfiniteScrollActivityView.swift */,
 			);
 			path = Views;
@@ -237,9 +235,25 @@
 		08D1DD4E225BA69500D35AEE /* Modals */ = {
 			isa = PBXGroup;
 			children = (
-				081A95902161CB5D00ABE656 /* ProfileHeaderView.swift */,
 			);
 			path = Modals;
+			sourceTree = "<group>";
+		};
+		08EC5E8C2350520100BD53DD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				08478F57215C0C130062FDD8 /* Main.storyboard */,
+				08478F5C215C0C140062FDD8 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		08EC5E8D2350522A00BD53DD /* Custom Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				081A958C2161BCB700ABE656 /* Pacifico.ttf */,
+			);
+			path = "Custom Fonts";
 			sourceTree = "<group>";
 		};
 		BD967AD492B77C98FDB3060E /* Pods */ = {
@@ -258,6 +272,8 @@
 		C98755E6182248A64EC824CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08A005772161421A0071AB29 /* Bolts.framework */,
+				08A005762161421A0071AB29 /* Parse.framework */,
 				08A0057421613E2E0071AB29 /* SystemConfiguration.framework */,
 				08A0057221613E210071AB29 /* StoreKit.framework */,
 				08A0057021613DF10071AB29 /* Security.framework */,
@@ -347,13 +363,16 @@
 				TargetAttributes = {
 					08478F4F215C0C130062FDD8 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 					};
 					08478F63215C0C140062FDD8 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 08478F4F215C0C130062FDD8;
 					};
 					08478F6E215C0C140062FDD8 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 						TestTargetID = 08478F4F215C0C130062FDD8;
 					};
 				};
@@ -709,7 +728,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.PicMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -732,7 +751,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.PicMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -753,7 +772,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.PicMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicMe.app/PicMe";
 			};
@@ -775,7 +794,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.PicMeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicMe.app/PicMe";
 			};
@@ -796,7 +815,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.PicMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PicMe;
 			};
@@ -817,7 +836,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RnR.PicMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = PicMe;
 			};

@@ -12,17 +12,22 @@ import Parse
 import MBProgressHUD
 
 class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    // MARK: IBOutlets
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postTextField: UITextField!
     @IBOutlet weak var publishBtn: UIButton!
+    
+    // MARK: Properties
     let vc = UIImagePickerController()
     
+    // MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         postImage.image = UIImage(named: "pbg.jpg")
     }
     
+    // MARK: IBActions
     @IBAction func postButton_Clicked(_ sender: Any) {
         print("Post button pressed")
         
@@ -42,15 +47,6 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.show(alert, sender: nil)
             }}}
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        let editedImage = resize(image: originalImage, newSize: CGSize(width: 640, height: 640))
-        self.postImage.image = editedImage
-        print("Image set")
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
     @IBAction func openCamera(_ sender: Any) {
         vc.sourceType = .camera
         vc.allowsEditing = true
@@ -65,7 +61,6 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    
     @IBAction func openPhotoLibrary(_ sender: Any) {
         vc.delegate = self
         vc.allowsEditing = true
@@ -74,11 +69,23 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.present(vc, animated: true, completion: nil)
     }
     
-    
     @IBAction func onTappedDismissKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
-
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeedViewController") as! FeedViewController
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Helper Functions
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        let editedImage = resize(image: originalImage, newSize: CGSize(width: 640, height: 640))
+        self.postImage.image = editedImage
+        print("Image set")
+        dismiss(animated: true, completion: nil)
+    }
     
     func resize(image: UIImage, newSize: CGSize) -> UIImage {
         let resizeImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: newSize.width, height:newSize.height)))
@@ -91,7 +98,7 @@ class NewPostViewController: UIViewController, UIImagePickerControllerDelegate, 
         UIGraphicsEndImageContext()
         return newImage!
     }
-
+    
 }
-        
+
 

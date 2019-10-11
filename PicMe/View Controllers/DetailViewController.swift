@@ -10,28 +10,25 @@ import UIKit
 import ParseUI
 
 class DetailViewController: UIViewController {
-
+    
+    // MARK: IBOutlets
     @IBOutlet weak var postImage: PFImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    // MARK: Properties
     var imageFile: PFFile?
     var posts: PFObject?
     var date: String?
     var caption: String?
     
-    
+    // MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         postImage.file = imageFile
         postImage.loadInBackground()
         dateLabel.text = date
         captionLabel.text = caption
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func backButton(_ sender: Any) {
-        self.view.window!.rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,20 +37,15 @@ class DetailViewController: UIViewController {
         nav?.tintColor = UIColor.yellow
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "camera-1")
+        let image = UIImage(named: "Like")
         imageView.image = image
         navigationItem.titleView = imageView
         navigationItem.title = "Back to New Feed"
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: IBActions
+    @IBAction func backButton(_ sender: Any) {
+        self.view.window!.rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
     }
-    */
-
+    
 }
